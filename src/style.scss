@@ -1,0 +1,259 @@
+$color-primary: #79a7d3;
+$color-secondary: #6883bc;
+$color-third: #8a307f;
+$color-dark: #191919;
+$color-light: #e8e8e8;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.txt-ctr {
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+  display: block;
+}
+
+// Sections
+section {
+  min-height: 100vh;
+}
+
+.fixed {
+  background-image: url(./img//code.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  background-attachment: fixed;
+}
+
+.scrollable {
+  background: $color-light;
+}
+
+.overlay-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.img-overlay, .content-overlay-wrapper {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content-overlay-wrapper {
+  z-index: 200;
+  color: $color-light;
+  transform: translateY(50%);
+}
+
+.content-overlay {
+  transform: translateY(-50%);
+}
+
+.self-img {
+  border-radius: 100px;
+  background-image: url(./img/self.png);
+  background-position: -20px;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+}
+
+.section-wrapper {
+  margin: 0;
+  padding: 5vh;
+  max-width: 1440px;
+}
+// End Sections
+
+/* nav */
+nav {
+  background: $color-light;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 900;
+}
+
+.nav-links {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: $color-third;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+.nav-links a:hover {
+  background: $color-third;
+  color: $color-light;
+}
+/* end nav */
+
+// Projects
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-container {
+  position: relative;
+  width: 425px;
+  height: 390px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.project-card, .project-overlay, .project-img {
+  width: 425px;
+  box-sizing: border-box;
+  height: 390px;
+}
+
+.project-card {
+  background: $color-dark;
+  color: $color-light;
+}
+
+.project-container:hover .project-overlay {
+  top: 0;
+}
+
+.project-container:hover .project-description, .project-container:hover .project-btns {
+  opacity: 1;
+}
+
+.project-title {
+  margin: 30px auto 30px;
+}
+
+.project-overlay {
+  box-sizing: border-box;
+  overflow: hidden;
+  background: $color-dark;
+  color: $color-light;
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  transition: 0.5s ease;
+}
+
+.project-img {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ccps-img {
+  background-image: url(./img/ccps.jpg);
+  background-position-y: -40px;
+}
+
+.emaily-img {
+  background-image: url(./img/b.jpg);
+  background-position-y: -40px;
+}
+
+.project-btns {
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.project-btn {
+  width: 250px;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  line-height: 40px;
+  text-decoration: none;
+  color: $color-light;
+  background-color: $color-dark;
+  border: 2px solid $color-third;
+  transition: 0.5s ease;
+}
+
+.project-btn:hover {
+  background: $color-third;
+}
+
+.project-overlay ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+.project-overlay li {
+  width: 200px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+.emaily li {
+  width: 133px;
+}
+
+.project-title {
+  margin: 20px 0 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 176px;
+}
+
+.project-description, .project-btns {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.text-sm {
+  font-size: 14px;
+  margin: 0;
+}
+
+.project-overlay .text-sm {
+  margin-top: 10px;
+}
+
+.content p {
+  padding: 0 25px;
+  margin: 0;
+}
+// Projects end

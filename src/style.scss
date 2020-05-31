@@ -23,6 +23,10 @@ h1, h2, h3 {
   display: block;
 }
 
+.full-width {
+  width: 100%;
+}
+
 // Sections
 section {
   min-height: 100vh;
@@ -121,9 +125,10 @@ nav {
 .cards-container {
   display: flex;
   justify-content: space-around;
+  margin: 5px 0;
 }
 
-.project-container {
+.card-container {
   position: relative;
   width: 425px;
   height: 390px;
@@ -131,41 +136,60 @@ nav {
   margin: 0 auto;
 }
 
-.project-card, .project-overlay, .project-img {
+.project-card, .project-overlay, .card-img, .ed-card, .ed-overlay, .card-img {
   width: 425px;
   box-sizing: border-box;
   height: 390px;
 }
 
-.project-card {
+.project-card, .ed-card {
   background: $color-dark;
   color: $color-light;
 }
 
-.project-container:hover .project-overlay {
+.card-container:hover .project-overlay, .card-container:hover .ed-overlay{
   top: 0;
 }
 
-.project-container:hover .project-description, .project-container:hover .project-btns {
+.card-container:hover .card-description, .card-container:hover .card-btns {
   opacity: 1;
 }
 
-.project-title {
+.ed-overlay .card-btn {
+  margin-top: 0;
+}
+
+.card-title {
   margin: 30px auto 30px;
 }
 
-.project-overlay {
+.ed-overlay h1 {
+  font-size: 28px;
+}
+
+.ed-overlay h2 {
+  margin-top: 15px;
+}
+
+.project-overlay, .ed-overlay {
   box-sizing: border-box;
   overflow: hidden;
   background: $color-dark;
   color: $color-light;
   position: absolute;
-  top: 200px;
   left: 0px;
   transition: 0.5s ease;
 }
 
-.project-img {
+.project-overlay {
+  top: 200px;
+}
+
+.ed-overlay {
+  top: 250px;
+}
+
+.card-img {
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -176,18 +200,40 @@ nav {
 }
 
 .emaily-img {
-  background-image: url(./img/b.jpg);
-  background-position-y: -40px;
+  background-image: url(./img/emaily.png);
+  background-position-x: 20px;
+  background-position-y: -150px;
 }
 
-.project-btns {
+.burger-img {
+  background-image: url(./img/burger.jpg);
+  background-position-y: -10px;
+}
+
+.bradley-img {
+  background-image: url(./img/bradley.jpg);
+  background-position-y: -25px;
+}
+
+.ga-img {
+  background-image: url(./img/ga.jpg);
+}
+
+.redlands-img {
+  background-image: url(./img/redlands.jpg);
+  background-size: 112%;
+  background-position-x: center;
+  background-position-y: -15px;
+}
+
+.card-btns {
   bottom: 0;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.project-btn {
+.card-btn {
   width: 250px;
   height: 40px;
   border-radius: 30px;
@@ -203,11 +249,11 @@ nav {
   transition: 0.5s ease;
 }
 
-.project-btn:hover {
+.card-btn:hover {
   background: $color-third;
 }
 
-.project-overlay ul {
+.project-overlay ul, .ed-overlay ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -216,7 +262,11 @@ nav {
   margin-top: 5px;
 }
 
-.project-overlay li {
+.ed-overlay ul {
+  margin: 0;
+}
+
+.project-overlay li, .ed-overlay li {
   width: 200px;
   margin: 5px auto;
   text-align: center;
@@ -226,7 +276,7 @@ nav {
   width: 133px;
 }
 
-.project-title {
+.card-title {
   margin: 20px 0 0;
 }
 
@@ -238,7 +288,15 @@ nav {
   height: 176px;
 }
 
-.project-description, .project-btns {
+.content p.studies {
+  margin-top: 25px;
+}
+
+.ed-overlay .content {
+  height: 230px;
+}
+
+.card-description, .card-btns {
   opacity: 0;
   transition: 0.5s ease;
 }
@@ -257,3 +315,8 @@ nav {
   margin: 0;
 }
 // Projects end
+
+
+.ed-overlay li.full-width {
+  width: 100%;
+}

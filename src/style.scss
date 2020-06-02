@@ -10,8 +10,9 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, ul, li {
   margin: 0;
+  padding: 0;
 }
 
 .txt-ctr {
@@ -36,8 +37,6 @@ h1, h2, h3 {
 .txt-shadow {
   text-shadow: 3px 3px $color-dark;
 }
-
-
 
 // Sections
 section {
@@ -90,7 +89,7 @@ section {
 }
 
 .section-wrapper {
-  margin: 0;
+  margin: 0 auto;
   padding: 2vh;
   max-width: 1440px;
 }
@@ -115,106 +114,66 @@ nav {
   align-items: center;
   margin: 0;
   padding: 0;
-}
 
-.nav-links a {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 20px;
-  color: $color-light;
-  text-decoration: none;
-  transition: 0.5s ease;
-}
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: $color-light;
+    text-decoration: none;
+    transition: 0.5s ease;
 
-.nav-links a:hover {
-  background: $color-light;
-  color: $color-third;
+    &:hover {
+      background: $color-light;
+      color: $color-third;
+    }
+  }
 }
 /* end nav */
 
-// Projects
-.cards-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 5px 0;
-}
-
-.card-container {
-  position: relative;
-  width: 425px;
-  height: 390px;
-  overflow: hidden;
+.card-main {
   margin: 0 auto;
+  display: block;
 }
 
-.project-card, .project-overlay, .card-img, .ed-card, .ed-overlay, .pub-overlay, .pub-card {
-  width: 425px;
-  box-sizing: border-box;
-  height: 390px;
+.card {
+  width: 275px;
+  margin: 40px auto;
 }
 
-.project-card, .ed-card, .pub-card {
+.card-text {
   background: $color-dark;
   color: $color-light;
 }
 
-.card-container:hover .project-overlay, .card-container:hover .ed-overlay, .card-container:hover .pub-overlay {
-  top: 0;
-}
-
-.card-container:hover .card-description, .card-container:hover .card-btns {
-  opacity: 1;
-}
-
-.ed-overlay .card-btn, .pub-overlay .card-btn {
-  margin-top: 0;
-}
-
-.card-title {
-  margin: 30px auto 30px;
-}
-
-.ed-overlay h1, .pub-overlay h1 {
-  font-size: 28px;
-}
-
-.ed-overlay h2, .pub-overlay h2 {
-  margin-top: 15px;
-}
-
-.project-overlay, .ed-overlay, .pub-overlay {
-  box-sizing: border-box;
-  overflow: hidden;
+.image-container {
   background: $color-dark;
-  color: $color-light;
-  position: absolute;
-  left: 0px;
-  transition: 0.5s ease;
-}
-
-.project-overlay {
-  top: 200px;
-}
-
-.ed-overlay, .pub-overlay {
-  top: 250px;
 }
 
 .card-img {
   background-size: contain;
   background-repeat: no-repeat;
+  min-height: 175px;
+  width: 100%;
+  text-align: center;
 }
 
-.ccps-img {
-  background-image: url(./img/ccps.jpg);
-  background-position-y: -40px;
+.ga-img {
+  background-image: url('./img/ga.jpg');
+}
+
+.redlands-img {
+  background-image: url('./img/redlands.jpg');
 }
 
 .emaily-img {
-  background-image: url(./img/emaily.png);
-  background-position-x: 20px;
-  background-position-y: -150px;
+  background-image: url('./img/emaily.png');
+  background-position-y: -140px;
+}
+
+.ccps-img {
+  background-image: url('./img/ccps.jpg');
 }
 
 .burger-img {
@@ -227,112 +186,187 @@ nav {
   background-position-y: -25px;
 }
 
-.ga-img {
-  background-image: url(./img/ga.jpg);
+.video-img {
+  background-image: url(./img/video.jpg);
 }
 
-.redlands-img {
-  background-image: url(./img/redlands.jpg);
-  background-size: 112%;
-  background-position-x: center;
-  background-position-y: -15px;
+.music-img {
+  background-image: url(./img/video.jpg);
 }
 
-.b-img {
-  background-image: url(./img/burger.jpg);
+.card-description {
+  ul {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .card-btns {
-  bottom: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+
+  a {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 2px solid $color-third;
+    border-radius: 50px;
+    text-decoration: none;
+    color: $color-light;
+    background: $color-third;
+  }
+
 }
 
-.card-btn {
-  width: 250px;
-  height: 40px;
-  border-radius: 30px;
-  font-size: 20px;
-  display: block;
-  text-align: center;
-  margin: 20px auto;
-  line-height: 40px;
-  text-decoration: none;
-  color: $color-light;
-  background-color: $color-dark;
-  border: 2px solid $color-third;
-  transition: 0.5s ease;
-}
+@media only screen and (min-width: 776px) {
 
-.card-btn:hover {
-  background: $color-third;
-}
+  .cards-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-.project-overlay ul, .ed-overlay ul, .pub-overlay ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  list-style: none;
-  padding: 0;
-  margin-top: 5px;
-}
+  .card {
+    width: 375px;
+    height: 355px;
+    position: relative;
+    overflow: hidden;
+  }
 
-.ed-overlay ul, .pub-overlay ul {
-  margin: 0;
-}
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    box-sizing: border-box;
 
-.project-overlay li, .ed-overlay li, .pub-overlay li {
-  width: 200px;
-  margin: 5px auto;
-  text-align: center;
-}
+    p {
+      margin: 0;
+    }
+  }
 
-.emaily li {
-  width: 133px;
-}
+  .image-container, .card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 
-.card-title {
-  margin: 20px 0 0;
-}
+  .education {
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 176px;
-}
+    .card-text {
+      top: 210px;
+      transition: 0.5s ease;
+    }
 
-.content p.studies {
-  margin-top: 25px;
-}
+    h1 {
+      font-size: 28px;
+    }
 
-.ed-overlay .content, .pub-overlay .content {
-  height: 230px;
-}
+    li, p {
+      font-size: 16px;
+    }
+  }
 
-.card-description, .card-btns {
-  opacity: 0;
-  transition: 0.5s ease;
-}
+  .project {
 
-.text-sm {
-  font-size: 14px;
-  margin: 0;
-}
+    .card-text {
+      top: 200px;
+      transition: 0.5s ease;
+    }
 
-.project-overlay .text-sm {
-  margin-top: 10px;
-}
+    h1 {
+      font-size: 24px;
+    }
 
-.content p {
-  padding: 0 25px;
-  margin: 0;
-}
-// Projects end
+    li, p {
+      font-size: 16px;
+    }
 
+    .card-btns {
+      a {
+        margin: 15px auto;
+        width: 200px;
+      }
+    }
+  }
 
-.ed-overlay li.full-width {
-  width: 100%;
+  .publication {
+
+    .card-text {
+      top: 250px;
+      transition: 0.5s ease;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    hr {
+      visibility: hidden;
+    }
+  }
+
+  .card-text li {
+    width: 49%;
+    display: inline-block;
+    text-align: center;
+    margin: 4px 0;
+  }
+
+  .card-text li.full-width {
+    width: 100%;
+  }
+
+  .card-text p {
+    padding: 0 25px;
+  }
+
+  .card-img {
+    min-height: 355px;
+  }
+
+  .card-description, .card-btns {
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+
+  .card-description p {
+    margin-bottom: 0;
+  }
+
+  .card-btns a {
+    background: $color-dark;
+    border: 3px solid $color-third;
+    transition: 0.5s ease;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+  }
+
+  .card-btns a:hover {
+    background: $color-third;
+  }
+
+  .card:hover .card-text {
+    top: 0;
+  }
+
+  .card:hover .card-description, .card:hover .card-btns {
+    opacity: 1;
+  }
+
+  .card-text {
+    height: 350px;
+  }
 }

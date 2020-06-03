@@ -47,8 +47,8 @@ h1, h2, h3, ul, li {
 section {
   min-height: 100vh;
   background: $color-light;
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 .fixed {
@@ -57,6 +57,7 @@ section {
   background-repeat: no-repeat;
   opacity: 0.8;
   background-attachment: fixed;
+  min-height: 75vh;
 }
 
 .scrollable {
@@ -264,6 +265,10 @@ nav {
 
   .education {
 
+    .top-titles {
+      height: 120px;
+    }
+
     .card-text {
       top: 210px;
       transition: 0.5s ease;
@@ -271,6 +276,10 @@ nav {
 
     h1 {
       font-size: 28px;
+    }
+
+    h2 {
+      font-size: 18px;
     }
 
     li, p {
@@ -366,13 +375,27 @@ nav {
     background: $color-third;
   }
 
-  .card:hover .card-text {
+  // .card:hover .card-text {
+  //   top: 0;
+  // }
+
+  // .card:hover .card-description, .card:hover .card-btns {
+  //   opacity: 1;
+  // }
+
+  .card .card-text {
     top: 0;
   }
 
-  .card:hover .card-description, .card:hover .card-btns {
+  .card .card-description, .card .card-btns {
     opacity: 1;
   }
+
+
+
+
+
+
 
   .card-text {
     height: 350px;

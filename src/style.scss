@@ -46,6 +46,8 @@ h1, h2, h3, ul, li {
 // Sections
 section {
   min-height: 100vh;
+  background: $color-light;
+  font-size: 24px;
 }
 
 .fixed {
@@ -95,7 +97,7 @@ section {
 
 .section-wrapper {
   margin: 0 auto;
-  padding: 2vh;
+  padding: 100px;
   max-width: 1440px;
 }
 // End Sections
@@ -196,7 +198,7 @@ nav {
 }
 
 .music-img {
-  background-image: url(./img/video.jpg);
+  background-image: url(./img/music.jpg);
 }
 
 .card-description {
@@ -409,4 +411,45 @@ nav {
       border-radius: 50%;
     }
 
+    // form
+    form {
+      width: 450px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      margin-bottom: 25px;
+    }
+
+    .full-width {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input {
+      width: 200px;
+      height: 40px;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    input, textarea {
+      margin-top: 25px;
+      font-size: 20px;
+      font-family: sans-serif;
+    }
+
+    .button {
+      background: $color-light;
+      border: 3px solid $color-third;
+      transition: 0.5s ease;
+      font-size: 20px;
+      border-radius: 50px;
+    }
+    
+    .button:hover {
+      background: $color-third;
+      color: $color-light;
+    }
   }

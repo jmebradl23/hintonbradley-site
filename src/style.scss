@@ -45,10 +45,10 @@ h1, h2, h3, ul, li {
 
 // Sections
 section {
-  min-height: 100vh;
+  // min-height: 100vh;
   background: $color-light;
   font-size: 20px;
-  line-height: 1.5;
+  // line-height: 1.5;
 }
 
 .fixed {
@@ -62,6 +62,17 @@ section {
 
 .scrollable {
   background: $color-light;
+}
+
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logos img {
+  height: 100px;
+  width: 100px;
 }
 
 .overlay-container {
@@ -99,7 +110,7 @@ section {
 
 .section-wrapper {
   margin: 0 auto;
-  padding: 100px;
+  padding: 20px 1vw;
   max-width: 1440px;
 }
 // End Sections
@@ -174,6 +185,8 @@ nav {
 
 .redlands-img {
   background-image: url('./img/redlands.jpg');
+  background-size: 115%;
+  background-position-x: -25px;
 }
 
 .emaily-img {
@@ -251,8 +264,17 @@ nav {
     padding: 10px 0;
     box-sizing: border-box;
 
+    h1 {
+      line-height: 1.2;
+    }
+
+    h2 {
+      line-height: 1.5;
+    }
+
     p {
       margin: 0;
+      line-height: 1.8;
     }
   }
 
@@ -266,11 +288,11 @@ nav {
   .education {
 
     .top-titles {
-      height: 120px;
+      height: 90px;
     }
 
     .card-text {
-      top: 210px;
+      top: 240px;
       transition: 0.5s ease;
     }
 
@@ -285,6 +307,16 @@ nav {
     li, p {
       font-size: 16px;
     }
+
+    .card-btns {
+      height: 55px;
+      padding-top: 10px;
+
+      a {
+        margin: 5px auto;
+      }
+    }
+
   }
 
   .project {
@@ -298,11 +330,16 @@ nav {
       font-size: 24px;
     }
 
+    li {
+      line-height: 1.2;
+    }
+
     li, p {
       font-size: 16px;
     }
 
     .card-btns {
+
       a {
         margin: 15px auto;
         width: 200px;
@@ -341,6 +378,10 @@ nav {
     margin: 4px 0;
   }
 
+  ul.thirds li {
+    width: 30%;
+  }
+
   .card-text li.full-width {
     width: 100%;
   }
@@ -375,27 +416,13 @@ nav {
     background: $color-third;
   }
 
-  // .card:hover .card-text {
-  //   top: 0;
-  // }
-
-  // .card:hover .card-description, .card:hover .card-btns {
-  //   opacity: 1;
-  // }
-
-  .card .card-text {
+  .card:hover .card-text {
     top: 0;
   }
 
-  .card .card-description, .card .card-btns {
+  .card:hover .card-description, .card:hover .card-btns {
     opacity: 1;
   }
-
-
-
-
-
-
 
   .card-text {
     height: 350px;
@@ -419,7 +446,7 @@ nav {
     text-align: center;
   }
 
-    img {
+    .recommendations img {
       border-radius: 80px;
       margin: 0 auto;
     }

@@ -1,7 +1,5 @@
 $color-primary: #4fadb3;
 $color-secondary: #ab2c76;
-// $color-secondary: #0071BC;
-// $color-third: #8a307f;
 $color-dark: #191919;
 $color-light: #e8e8e8;
 
@@ -21,10 +19,6 @@ h1, h2, h3, ul, li {
   text-align: center;
 }
 
-// .mt-20 {
-//   margin-top: 20px;
-// }
-
 .center {
   margin: 0 auto;
   display: block;
@@ -39,12 +33,6 @@ h1, h2, h3, ul, li {
   width: 100%;
 }
 
-.section-title {
-  font-size: 42px;
-  padding: 10px 0;
-  text-align: center;
-}
-
 .txt-shadow {
   text-shadow: 3px 3px $color-dark;
 }
@@ -55,13 +43,23 @@ h1, h2, h3, ul, li {
   margin: 50px auto 30px;
 }
 
+
 // Sections
 section {
-  // min-height: 100vh;
   background: $color-light;
   font-size: 20px;
   color: $color-dark;
-  // line-height: 1.5;
+}
+
+.section-title {
+  font-size: 42px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.section-text {
+  padding: 0 5vw;
+  line-height: 1.5;
 }
 
 .fixed {

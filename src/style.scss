@@ -1,6 +1,7 @@
-$color-primary: #79a7d3;
-$color-secondary: #6883bc;
-$color-third: #8a307f;
+$color-primary: #4fadb3;
+$color-secondary: #ab2c76;
+// $color-secondary: #0071BC;
+// $color-third: #8a307f;
 $color-dark: #191919;
 $color-light: #e8e8e8;
 
@@ -8,6 +9,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  color: $color-light;
 }
 
 h1, h2, h3, ul, li {
@@ -18,6 +20,10 @@ h1, h2, h3, ul, li {
 .txt-ctr {
   text-align: center;
 }
+
+// .mt-20 {
+//   margin-top: 20px;
+// }
 
 .center {
   margin: 0 auto;
@@ -34,7 +40,7 @@ h1, h2, h3, ul, li {
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: 42px;
   padding: 10px 0;
   text-align: center;
 }
@@ -43,11 +49,18 @@ h1, h2, h3, ul, li {
   text-shadow: 3px 3px $color-dark;
 }
 
+.about-content hr {
+  margin: 50px;
+  width: 350px;
+  margin: 50px auto 30px;
+}
+
 // Sections
 section {
   // min-height: 100vh;
   background: $color-light;
   font-size: 20px;
+  color: $color-dark;
   // line-height: 1.5;
 }
 
@@ -71,7 +84,15 @@ section {
   align-items: center;
 }
 .logos img {
-  height: 100px;
+  height: 75px;
+  width: 75px;
+}
+
+.logos img.js {
+  width: 135px;
+}
+
+.logos img.redux {
   width: 100px;
 }
 
@@ -146,7 +167,7 @@ nav {
 
     &:hover {
       background: $color-light;
-      color: $color-third;
+      color: $color-secondary
     }
   }
 }
@@ -160,6 +181,11 @@ nav {
 .card {
   width: 275px;
   margin: 40px auto;
+  box-shadow: 18px 24px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  p, li {
+    font-size: 16px;
+  }
 }
 
 .card-text {
@@ -177,43 +203,6 @@ nav {
   min-height: 175px;
   width: 100%;
   text-align: center;
-}
-
-.ga-img {
-  background-image: url('./img/ga.jpg');
-}
-
-.redlands-img {
-  background-image: url('./img/redlands.jpg');
-  background-size: 115%;
-  background-position-x: -25px;
-}
-
-.emaily-img {
-  background-image: url('./img/emaily.png');
-  background-position-y: -140px;
-}
-
-.ccps-img {
-  background-image: url('./img/ccps.jpg');
-}
-
-.burger-img {
-  background-image: url(./img/burger.jpg);
-  background-position-y: -10px;
-}
-
-.bradley-img {
-  background-image: url(./img/bradley.jpg);
-  background-position-y: -25px;
-}
-
-.video-img {
-  background-image: url(./img/video.jpg);
-}
-
-.music-img {
-  background-image: url(./img/music.jpg);
 }
 
 .card-description {
@@ -234,13 +223,33 @@ nav {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    border: 2px solid $color-third;
+    border: 2px solid $color-secondary;
     border-radius: 50px;
     text-decoration: none;
     color: $color-light;
-    background: $color-third;
+    background: $color-secondary;
   }
 
+}
+
+.emaily-img {
+  background-image: url('./img/emaily.png');
+  background-position-y: -140px;
+}
+
+.ccps-img {
+  background-image: url('./img/ccps.jpg');
+  background-position-x: 120px;
+}
+
+.burger-img {
+  background-image: url(./img/burger.jpg);
+  background-position-y: -10px;
+}
+
+.bradley-img {
+  background-image: url(./img/bradley.jpg);
+  background-position-y: -25px;
 }
 
 @media only screen and (min-width: 776px) {
@@ -304,10 +313,6 @@ nav {
       font-size: 18px;
     }
 
-    li, p {
-      font-size: 16px;
-    }
-
     .card-btns {
       height: 55px;
       padding-top: 10px;
@@ -320,30 +325,68 @@ nav {
   }
 
   .project {
+    &.card {
+      height: 400px;
+    }
 
     .card-text {
-      top: 200px;
+      height: 400px;
+    }
+
+    .top-titles {
+      height: 130px;
+
+    }
+
+    .card-text {
+      top: 225px;
       transition: 0.5s ease;
     }
 
     h1 {
       font-size: 24px;
+      line-height: 2;
     }
 
     li {
       line-height: 1.2;
     }
 
-    li, p {
-      font-size: 16px;
-    }
-
     .card-btns {
+      height: 120px;
 
       a {
-        margin: 15px auto;
+        margin: 10px auto;
         width: 200px;
       }
+    }
+
+    .card-img {
+      background-size: 115%;
+      background-position-x: -50px;
+      background-position-y: -10px;
+    }
+
+    .emaily-img {
+      // background-image: url('./img/emaily.png');
+      background-position: 10px -120px;
+      background-size: 100%;
+    }
+    
+    .ccps-img {
+      background-image: url('./img/ccps.jpg');
+      background-size: 150%;
+      background-position: -95px -50px;
+    }
+    
+    .burger-img {
+      background-image: url(./img/burger.jpg);
+      background-position-y: -10px;
+    }
+    
+    .bradley-img {
+      background-image: url(./img/bradley.jpg);
+      background-position-y: -25px;
     }
   }
 
@@ -354,8 +397,13 @@ nav {
       transition: 0.5s ease;
     }
 
+    .top-titles {
+      height: 75px;
+    }
+
     h1 {
-      font-size: 20px;
+      font-size: 22px;
+      padding: 10px;
     }
 
     h2 {
@@ -366,8 +414,8 @@ nav {
       line-height: 1.5;
     }
 
-    hr {
-      visibility: hidden;
+    .card-btns {
+      height: 50px;
     }
   }
 
@@ -405,15 +453,16 @@ nav {
 
   .card-btns a {
     background: $color-dark;
-    border: 3px solid $color-third;
+    border: 3px solid $color-secondary;
     transition: 0.5s ease;
     height: 40px;
+    width: 200px;
     line-height: 40px;
     font-size: 20px;
   }
 
   .card-btns a:hover {
-    background: $color-third;
+    background: $color-secondary;
   }
 
   .card:hover .card-text {
@@ -434,6 +483,11 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     margin: 35px 0;
+
+    img {
+      border-radius: 80px;
+      margin: 0 auto;
+    }
   }
 
   .rec-text {
@@ -445,11 +499,6 @@ nav {
     flex-basis: 20%;
     text-align: center;
   }
-
-    .recommendations img {
-      border-radius: 80px;
-      margin: 0 auto;
-    }
 
     .sush {
       background-image: url('./img/sush.jpg');
@@ -493,14 +542,38 @@ nav {
 
     .button {
       background: $color-light;
-      border: 3px solid $color-third;
+      border: 3px solid $color-secondary;
       transition: 0.5s ease;
       font-size: 20px;
       border-radius: 50px;
     }
     
     .button:hover {
-      background: $color-third;
+      background: $color-secondary;
       color: $color-light;
+    }
+
+
+
+
+
+
+    .ga-img {
+      background-image: url('./img/ga.jpg');
+    }
+    
+    .redlands-img {
+      background-image: url('./img/redlands.jpg');
+      background-size: 115%;
+      background-position-x: -25px;
+    }
+    
+    
+    .video-img {
+      background-image: url(./img/video.jpg);
+    }
+    
+    .music-img {
+      background-image: url(./img/music.jpg);
     }
   }

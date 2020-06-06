@@ -370,6 +370,9 @@ section {
 
 // Contact
 .contact {
+  background: $color-dark;
+  color: $color-light;
+
   p.txt-ctr {
     margin: 5px 0;
   }
@@ -408,6 +411,10 @@ input, textarea {
 
 
 @media only screen and (min-width: 776px) {
+
+  p, li {
+    font-size: 20px;
+  }
 
   .btn {
     background: $color-dark;

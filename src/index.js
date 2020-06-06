@@ -7,6 +7,10 @@ $(document).ready(function() {
     const links = document.querySelectorAll('.nav-links a');
     links.forEach(link => link.addEventListener('click', smoothScroll));
     sal();
+    const hamburger = document.getElementsByClassName('hamburger')[0];
+    hamburger.addEventListener('click', toggleNavbar);
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.addEventListener('click', toggleNavbar);
 });
 
 function smoothScroll (e) {
@@ -16,4 +20,9 @@ function smoothScroll (e) {
         duration: 1000,
         offset: -58
       })
+}
+
+function toggleNavbar (e) {
+    const links = document.querySelector('.nav-links');
+    links.classList.toggle('show')
 }

@@ -6,13 +6,6 @@ $color-secondary: #ab2c76;
 $color-dark: #191919;
 $color-light: #e8e8e8;
 
-.hamburger div {
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
-}
-
 html, body {
   margin: 0;
   padding: 0;
@@ -97,7 +90,8 @@ section {
 }
 
 .logos img.js {
-  width: 135px;
+  height: 70px;
+  width: 70px;
 }
 
 .logos img.redux {
@@ -144,7 +138,7 @@ section {
 }
 // End Sections
 
-/* nav */
+// Navbar:
 nav {
   background: $color-dark;
   position: fixed;
@@ -154,8 +148,17 @@ nav {
   z-index: 900;
 }
 
+.hamburger div {
+  width: 35px;
+  height: 5px;
+  background-color: $color-light;
+  margin: 6px 0;
+}
+
 .hamburger {
   margin: 0;
+  padding: 10px;
+  height: 40px;
 }
 
 .nav-links {
@@ -164,27 +167,94 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 60px;
   padding: 0;
   display: block;
   width: 100%;
   background: $color-dark;
+  position: absolute;
+  top: -200px;
+  transition: 0.5 ease;
+
+  &.show {
+    top: 60px;
+    transition: 0.5 ease;
+  }
 
   a {
     color: $color-light;
     text-decoration: none;
     background: $color-dark;
-    padding: 0 100% 0 0;
+    padding: 10px 100% 10px 20px;
     font-size: 20px;
     display: block;
-    margin: 5px 0;
-  }
-
-  .fa {
-    font-size: 64px;
   }
 }
-/* end nav */
+/* end Navbar */
+
+// Card Generic
+.card {
+  h1 {
+    font-size: 24px;
+    padding: 10px 0 5px;
+  }
+
+  h2 {
+    font-size: 18px;
+    padding: 5px 0;
+  }
+
+  li {
+    text-align: center;
+    padding: 2px 0;
+  }
+
+  p {
+    margin: 3px 0;
+    padding: 0 15px;
+  }
+
+  .card-subtext {
+    margin-bottom: 15px;
+  }
+
+  .card-btns {
+    margin: 5px auto;
+    padding: 5px 0 15px;
+  }
+
+  .card-btn {
+    margin: 10px auto;
+  }
+}
+// end Card Generic
+
+// Education
+.ga-img {
+  background-image: url('./img/ga.jpg');
+}
+
+.redlands-img {
+  background-image: url('./img/redlands.jpg');
+}
+// end Education
+
+// Project
+.emaily-img {
+  // background-image: url('./img/emaily.png');
+  background-position: 67px 6px;
+  // background-size: 100%;
+  background-image: url('./img/emaily.png');
+
+  // .emaily-img {
+    // background-image: url('./img/emaily.png');
+    // background-position-x: 105px;
+    // background-position-y: 300px;
+    background-size: 110%;
+  // }
+}
+// end Project
+
+
 
 .card-main {
   margin: 0 auto;
@@ -245,14 +315,24 @@ nav {
 
 }
 
-.emaily-img {
-  background-image: url('./img/emaily.png');
-  background-position-y: -140px;
+.publication {
+  h1 {
+    text-decoration: underline;
+  }
+
+  h1, h2 {
+    font-size: 16px;
+    padding: 10px 0 5px;
+  }
+
+  p {
+    text-align: justify;
+    line-height: 1.3;
+  }
 }
 
 .ccps-img {
   background-image: url('./img/ccps.jpg');
-  background-position-x: 120px;
 }
 
 .burger-img {
@@ -262,7 +342,15 @@ nav {
 
 .bradley-img {
   background-image: url(./img/bradley.jpg);
-  background-position-y: -25px;
+  background-size: cover;
+}
+
+.video-img {
+  background-image: url(./img/video.jpg);
+}
+
+.music-img {
+  background-image: url(./img/music.jpg);
 }
 
 @media only screen and (min-width: 776px) {
@@ -415,8 +503,16 @@ nav {
 
     .emaily-img {
       // background-image: url('./img/emaily.png');
-      background-position: 10px -120px;
-      background-size: 100%;
+      background-position: 67px 6px;
+      // background-size: 100%;
+      background-image: url('./img/emaily.png');
+
+      // .emaily-img {
+        // background-image: url('./img/emaily.png');
+        // background-position-x: 105px;
+        // background-position-y: 300px;
+        background-size: 110%;
+      // }
     }
     
     .ccps-img {
@@ -598,28 +694,9 @@ nav {
       background: $color-secondary;
       color: $color-light;
     }
-
-
-
-
-
-
-    .ga-img {
-      background-image: url('./img/ga.jpg');
-    }
     
     .redlands-img {
-      background-image: url('./img/redlands.jpg');
       background-size: 115%;
       background-position-x: -25px;
-    }
-    
-    
-    .video-img {
-      background-image: url(./img/video.jpg);
-    }
-    
-    .music-img {
-      background-image: url(./img/music.jpg);
     }
   }

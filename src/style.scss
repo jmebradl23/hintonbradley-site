@@ -1,6 +1,4 @@
-// $fa-font-path: "~font-awesome/fonts";
-// @import '~font-awesome/scss/font-awesome.scss';
-
+// General
 $color-primary: #4fadb3;
 $color-secondary: #ab2c76;
 $color-dark: #191919;
@@ -27,18 +25,9 @@ p {
   text-align: center;
 }
 
-.center {
-  margin: 0 auto;
-  display: block;
-}
-
 .right {
   float: right;
   order: 2;
-}
-
-.full-width {
-  width: 100%;
 }
 
 .txt-shadow {
@@ -51,100 +40,19 @@ p {
   margin: 50px auto 30px;
 }
 
-
-// Sections
-section {
-  background: $color-light;
-  font-size: 20px;
-  color: $color-dark;
-}
-
-.section-title {
-  font-size: 42px;
-  padding: 10px 0;
+.btn {
+  display: block;
+  width: 175px;
+  margin: 10px auto;
+  padding: 5px 15px;
   text-align: center;
-}
-
-.section-text {
-  padding: 0 5vw;
-  line-height: 1.5;
-}
-
-.fixed {
-  background-image: url(./img/code.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.8;
-  background-attachment: fixed;
-  min-height: 75vh;
-}
-
-.scrollable {
-  background: $color-light;
-}
-
-
-.logos {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 20px;
-}
-
-.logos img {
-  height: 75px;
-  width: 75px;
-}
-
-.logos img.js {
-  height: 70px;
-  width: 70px;
-}
-
-.logos img.redux {
-  width: 100px;
-}
-
-.overlay-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.img-overlay, .content-overlay-wrapper {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.content-overlay-wrapper {
-  z-index: 200;
+  border: 2px solid $color-secondary;
+  border-radius: 50px;
+  text-decoration: none;
   color: $color-light;
-  transform: translateY(50%);
+  background: $color-secondary;
 }
-
-.content-overlay {
-  transform: translateY(-50%);
-}
-
-.self-img {
-  border-radius: 100px;
-  background-image: url(./img/self.png);
-  background-position: -10px -6px;
-  height: 200px;
-  width: 200px;
-  background-size: 116%;
-}
-
-.section-wrapper {
-  margin: 0 auto;
-  padding: 20px 1vw;
-  max-width: 1440px;
-}
-// End Sections
+// end General
 
 // Navbar:
 nav {
@@ -154,6 +62,7 @@ nav {
   top: 0;
   left: 0;
   z-index: 900;
+  height: 60px;
 }
 
 .hamburger div {
@@ -199,8 +108,108 @@ nav {
 }
 /* end Navbar */
 
-// Card Generic
+// Sections
+section {
+  color: $color-dark;
+  background: $color-light;
+  font-size: 20px;
+
+  .section-wrapper {
+    margin: 0 auto;
+    padding: 20px 1vw;
+    max-width: 1440px;
+  }
+
+  h1 {
+    font-size: 42px;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  p {
+    padding: 0 5vw;
+    line-height: 1.5;
+  }
+}
+
+.fixed {
+  background-attachment: fixed;
+  background-image: url(./img/code.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  min-height: 75vh;
+}
+
+.overlay-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.img-overlay, .content-overlay-wrapper {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content-overlay-wrapper {
+  z-index: 200;
+  color: $color-light;
+  transform: translateY(50%);
+}
+
+.content-overlay {
+  transform: translateY(-50%);
+}
+
+.self-img {
+  border-radius: 100px;
+  background-image: url(./img/self.png);
+  background-position: -10px -6px;
+  height: 200px;
+  width: 200px;
+  background-size: 116%;
+  margin: 0 auto;
+}
+
+.scrollable {
+  background: $color-light;
+}
+// End Sections
+
+// About
+.logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.logos img {
+  height: 75px;
+  width: 75px;
+}
+
+.logos img.js {
+  height: 70px;
+  width: 70px;
+}
+
+.logos img.redux {
+  width: 100px;
+}
+// end About
+
+// Card
 .card {
+  width: 275px;
+  margin: 40px auto;
+  box-shadow: 18px 24px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
   h1 {
     font-size: 24px;
     padding: 10px 10px 5px;
@@ -222,67 +231,9 @@ nav {
     line-height: 1.5;
   }
 
-  .card-subtext {
-    margin-bottom: 15px;
-  }
-
-  .card-btns {
-    margin: 5px auto;
-    padding: 5px 0 15px;
-  }
-
-  .card-btn {
-    margin: 10px auto;
-  }
-}
-// end Card Generic
-
-// Education
-.ga-img {
-  background-image: url('./img/ga.jpg');
-}
-
-.redlands-img {
-  background-image: url('./img/redlands.jpg');
-}
-// end Education
-
-// Project
-.emaily-img {
-  // background-image: url('./img/emaily.png');
-  background-position: 67px 6px;
-  // background-size: 100%;
-  background-image: url('./img/emaily.png');
-
-  // .emaily-img {
-    // background-image: url('./img/emaily.png');
-    // background-position-x: 105px;
-    // background-position-y: 300px;
-    background-size: 110%;
-  // }
-}
-// end Project
-
-
-
-.card-main {
-  margin: 0 auto;
-  display: block;
-}
-
-.card {
-  width: 275px;
-  margin: 40px auto;
-  box-shadow: 18px 24px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
   p, li {
     font-size: 16px;
   }
-}
-
-.card-text {
-  background: $color-dark;
-  color: $color-light;
 }
 
 .image-container {
@@ -297,6 +248,10 @@ nav {
   text-align: center;
 }
 
+.card-subtext {
+  margin-bottom: 15px;
+}
+
 .card-description {
   ul {
     padding-top: 0;
@@ -306,24 +261,88 @@ nav {
   }
 }
 
-.card-btns {
-
-  a {
-    display: block;
-    width: 150px;
-    margin: 0 auto;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border: 2px solid $color-secondary;
-    border-radius: 50px;
-    text-decoration: none;
-    color: $color-light;
-    background: $color-secondary;
-  }
-
+.card-text {
+  background: $color-dark;
+  color: $color-light;
 }
 
+.card-btns {
+  margin: 5px auto;
+  padding: 5px 0 15px;
+}
+// end Card
+
+// Education
+.ga-img {
+  background-image: url('./img/ga.jpg');
+}
+
+.redlands-img {
+  background-image: url('./img/redlands.jpg');
+}
+// end Education
+
+// Project
+.emaily-img {
+  background-position: 67px 6px;
+  background-image: url('./img/emaily.png');
+  background-size: 110%;
+}
+
+.ccps-img {
+  background-image: url('./img/ccps.jpg');
+}
+
+.burger-img {
+  background-image: url(./img/burger.jpg);
+  background-position-y: -10px;
+}
+
+.bradley-img {
+  background-image: url(./img/bradley.jpg);
+  background-size: cover;
+}
+// end Project
+
+// Recommendations
+.recommendation {
+  margin: 40px auto;
+
+  .right {
+    float: none;
+  }
+
+  img {
+    border-radius: 80px;
+    margin: 0 auto;
+  }
+}
+
+.rec-img-container, .rec-test {
+  display: block;
+  width: 100%;
+}
+
+.rec-img-container img, .rec-img-container div {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.rec-img-container.right {
+  width: 0;
+}
+
+.rec-img-container.right.sal-animate {
+  width: 100%;
+}
+
+.rec-text {
+  padding: 0 25px;
+}
+// end Recommendations
+
+// Publications
 .publication {
   h1 {
     text-decoration: underline;
@@ -340,20 +359,6 @@ nav {
   }
 }
 
-.ccps-img {
-  background-image: url('./img/ccps.jpg');
-}
-
-.burger-img {
-  background-image: url(./img/burger.jpg);
-  background-position-y: -10px;
-}
-
-.bradley-img {
-  background-image: url(./img/bradley.jpg);
-  background-size: cover;
-}
-
 .video-img {
   background-image: url(./img/video.jpg);
 }
@@ -361,43 +366,90 @@ nav {
 .music-img {
   background-image: url(./img/music.jpg);
 }
+// end Publications
+
+// Contact
+.contact {
+  p.txt-ctr {
+    margin: 5px 0;
+  }
+}
+// Form
+form {
+  max-width: 450px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  width: 90%;
+
+  .full-width {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+input {
+  width: 200px;
+  height: 40px;
+}
+
+textarea {
+  width: 100%;
+}
+
+input, textarea {
+  margin-top: 25px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+// end Form
+// end Contact
+
 
 @media only screen and (min-width: 776px) {
 
-  // Navbar {
-    nav {
-      height: 60px;
-    }
+  .btn {
+    background: $color-dark;
+    border: 3px solid $color-secondary;
+    transition: 0.5s ease;
+  }
 
-    .hamburger {
-      display: none;
-    }
+  .btn:hover {
+    background: $color-secondary;
+  }
 
-    .nav-links {
-      height: 100%;
-      list-style: none;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin: 0;
-      top: 0;
+  // .full-width {
+  //   width: 100%;
+  // }
 
-      a {
-        display: inline-block;
-        padding: 10px 20px;
-        border-radius: 50px;
-        font-size: 20px;
-        transition: 0.5s ease;
+// Navbar {
+  .hamburger {
+    display: none;
+  }
 
-        &:hover {
-          background: $color-light;
-          color: $color-secondary
-        }
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    top: 0;
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: 0.5s ease;
+
+      &:hover {
+        background: $color-light;
+        color: $color-secondary
       }
     }
-    
-  
+  }
+  // end Navbar
 
+  // Cards
   .cards-container {
     display: flex;
     justify-content: space-evenly;
@@ -408,6 +460,34 @@ nav {
     height: 355px;
     position: relative;
     overflow: hidden;
+
+    h1, h2, p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .card-text {
+    height: 350px;
+  }
+
+  .card-img {
+    min-height: 355px;
+  }
+
+  .card-description, .card-btns {
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+
+  .card-description {
+    padding: 0 20px;
+  }
+
+  .card-btns {
+    margin: 0 auto;
+    padding: 0;
+    height: 50px;
   }
 
   .card-text {
@@ -425,6 +505,21 @@ nav {
       line-height: 1.5;
     }
 
+    ul.thirds li {
+      width: 30%;
+    }
+
+    li {
+      width: 49%;
+      display: inline-block;
+      text-align: center;
+      margin: 4px 0;
+    }
+
+    li.full-width {
+      width: 100%;
+    }
+
     p {
       margin: 0;
       line-height: 1.8;
@@ -439,6 +534,10 @@ nav {
   }
 
   .education {
+    .redlands-img {
+      background-size: 115%;
+      background-position-x: -25px;
+    }
 
     .top-titles {
       height: 90px;
@@ -457,15 +556,15 @@ nav {
       font-size: 18px;
     }
 
-    .card-btns {
-      height: 55px;
-      padding-top: 10px;
+    p {
+      padding: 0 25px;
+    }
 
+    .card-btns {
       a {
         margin: 5px auto;
       }
     }
-
   }
 
   .project {
@@ -479,7 +578,6 @@ nav {
 
     .top-titles {
       height: 130px;
-
     }
 
     .card-text {
@@ -489,7 +587,10 @@ nav {
 
     h1 {
       font-size: 24px;
-      line-height: 2;
+    }
+
+    h2 {
+      font-size: 12px;
     }
 
     li {
@@ -497,7 +598,7 @@ nav {
     }
 
     .card-btns {
-      height: 120px;
+      height: 110px;
 
       a {
         margin: 10px auto;
@@ -512,32 +613,20 @@ nav {
     }
 
     .emaily-img {
-      // background-image: url('./img/emaily.png');
-      background-position: 67px 6px;
-      // background-size: 100%;
-      background-image: url('./img/emaily.png');
-
-      // .emaily-img {
-        // background-image: url('./img/emaily.png');
-        // background-position-x: 105px;
-        // background-position-y: 300px;
-        background-size: 110%;
-      // }
+      background-position: 20px -120px;
+      background-size: 100%;
     }
     
     .ccps-img {
-      background-image: url('./img/ccps.jpg');
       background-size: 150%;
       background-position: -95px -50px;
     }
     
     .burger-img {
-      background-image: url(./img/burger.jpg);
       background-position-y: -10px;
     }
     
     .bradley-img {
-      background-image: url(./img/bradley.jpg);
       background-position-y: -25px;
     }
   }
@@ -571,63 +660,14 @@ nav {
     }
   }
 
-  .card-text li {
-    width: 49%;
-    display: inline-block;
-    text-align: center;
-    margin: 4px 0;
-  }
-
-  ul.thirds li {
-    width: 30%;
-  }
-
-  .card-text li.full-width {
-    width: 100%;
-  }
-
-  .card-text p {
-    padding: 0 25px;
-  }
-
-  .card-img {
-    min-height: 355px;
-  }
-
-  .card-description, .card-btns {
-    opacity: 0;
-    transition: 0.5s ease;
-  }
-
-  .card-description p {
-    margin-bottom: 0;
-  }
-
-  .card-btns a {
-    background: $color-dark;
-    border: 3px solid $color-secondary;
-    transition: 0.5s ease;
-    height: 40px;
-    width: 200px;
-    line-height: 40px;
-    font-size: 20px;
-  }
-
-  .card-btns a:hover {
-    background: $color-secondary;
-  }
-
-  .card:hover .card-text {
+    .card:hover .card-text {
     top: 0;
   }
 
   .card:hover .card-description, .card:hover .card-btns {
     opacity: 1;
   }
-
-  .card-text {
-    height: 350px;
-  }
+  // end Cards
 
   // recommendations
   .recommendation {
@@ -635,11 +675,6 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     margin: 35px 0;
-
-    img {
-      border-radius: 80px;
-      margin: 0 auto;
-    }
   }
 
   .rec-text {
@@ -651,62 +686,5 @@ nav {
     flex-basis: 20%;
     text-align: center;
   }
-
-    .sush {
-      background-image: url('./img/sush.jpg');
-      background-size: 150%;
-      background-position: -30px -20px;
-      height: 150px;
-      width: 150px;
-      background-repeat: no-repeat;
-      margin: 0 auto;
-      border-radius: 50%;
-    }
-
-    // form
-    form {
-      width: 450px;
-      box-sizing: border-box;
-      margin: 0 auto;
-      margin-bottom: 25px;
-    }
-
-    .full-width {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    input {
-      width: 200px;
-      height: 40px;
-    }
-
-    textarea {
-      width: 100%;
-    }
-
-    input, textarea {
-      margin-top: 25px;
-      font-size: 20px;
-      font-family: sans-serif;
-    }
-
-    .button {
-      background: $color-light;
-      border: 3px solid $color-secondary;
-      transition: 0.5s ease;
-      font-size: 20px;
-      border-radius: 50px;
-    }
-    
-    .button:hover {
-      background: $color-secondary;
-      color: $color-light;
-    }
-    
-    .redlands-img {
-      background-size: 115%;
-      background-position-x: -25px;
-    }
-  }
+// end Recommendations
+}

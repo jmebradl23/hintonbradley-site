@@ -74,8 +74,8 @@ nav {
 
 .hamburger {
   margin: 0;
-  padding: 10px;
-  height: 40px;
+  padding: 11px 25px;
+  height: 38px;
 }
 
 .nav-links {
@@ -189,6 +189,15 @@ section {
   padding: 0 20px;
 }
 
+.three {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 10px 0;
+
+
+}
+
 .logos img {
   height: 75px;
   width: 75px;
@@ -208,7 +217,7 @@ section {
 .card {
   width: 275px;
   margin: 40px auto;
-  box-shadow: 18px 24px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 18px 16px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
   h1 {
     font-size: 24px;
@@ -284,7 +293,8 @@ section {
 
 // Project
 .emaily-img {
-  background-position: 67px 6px;
+  background-position: 20px -120px;
+  // background-position: 67px 6px;
   background-image: url('./img/emaily.png');
   background-size: 110%;
 }
@@ -315,7 +325,12 @@ section {
   img {
     border-radius: 80px;
     margin: 0 auto;
+    box-shadow: 18px 16px 12px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
+}
+
+.rec-name {
+  margin: 10px 0 0;
 }
 
 .rec-img-container, .rec-test {
@@ -327,6 +342,10 @@ section {
   margin: 0 auto;
   display: block;
   text-align: center;
+}
+
+.rec-img-container div {
+  margin: 10px 0 0;
 }
 
 .rec-img-container.right {
@@ -424,6 +443,12 @@ input, textarea {
 
   .btn:hover {
     background: $color-secondary;
+  }
+
+  .three {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
   }
 
   // .full-width {
@@ -620,8 +645,9 @@ input, textarea {
     }
 
     .emaily-img {
-      background-position: 20px -120px;
       background-size: 100%;
+      background-position: 12px -131px;
+      // background-size: 110%;
     }
     
     .ccps-img {
@@ -694,4 +720,18 @@ input, textarea {
     text-align: center;
   }
 // end Recommendations
+}
+
+@media only screen and (max-width: 500px) {
+  // Contact Form
+  form {
+    .full-width {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+  // end Contact Form
 }

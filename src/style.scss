@@ -485,6 +485,8 @@ input, textarea {
   .cards-container {
     display: flex;
     justify-content: space-evenly;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .card {
@@ -600,6 +602,7 @@ input, textarea {
   }
 
   .project {
+
     &.card {
       height: 400px;
     }

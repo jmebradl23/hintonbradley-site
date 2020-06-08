@@ -1,0 +1,166 @@
+*******************
+** SETUP WEBPACK **
+*******************
+
+Step 1: Create a root directory and cd into it
+$ mkdir <name> && cd <name>
+
+Step 2: Initialize npm (with an index.js file - using -y will auto complete)
+$ npm init -y
+
+Step 3: Install webpack and webpack-cli as development dependencies
+$ npm i --save-dev webpack webpack-cli
+
+Step 4: In the package.json file, add a build script
+...
+"scripts": {
+    "build":"webpack"
+},
+...
+
+Step 5: In the root directory, create an index.js file inside a /src folder
+$ mkdir src && touch src/index.js
+
+Step 6: Create a test.js file in the src folder
+$ touch src/test.js
+
+Step 7: Add a function to export in the test.js file
+const test = (string) => {
+    return `The string is: ${string}`;
+}
+export {test};
+
+Step 8: in the src/index.js file, import the test.js file and call the imported function
+import {test} from './test';
+console.log(test('come on Eileen'))
+
+Step 9: In the src folder, create an index.html file and add boilerplate code
+$ touch src/index.html
+
+Step 10: Create a config file in your root directory
+$ touch webpack.config.js
+
+Step 11: Install html-wepback-plugin and html-loader as development dependencies
+$ npm i --save-dev html-webpack-plugin html-loader
+
+Step 12: In the new config file, add the following code for your html and js files
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader",
+                        options: { minimize: true }
+                    }
+                ]
+            },
+        ]
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: "./src/index.html",
+            filename: "./index.html"
+        }),
+    ]
+}
+
+Step 13: Run the build command and make sure your code has been compiled in the dist folder
+$ npm run build
+
+Step 14: Install the webpack development server
+$ npm i --save-dev webpack-dev-server
+
+Step 15: Add the webserver script to your package.json file
+...
+"build": "webpack",
+    "start:dev":"webpack-dev-server"
+},
+...
+
+Step 16: Start the development server, and in the terminal click the port the server is running on to view your page (usually: http://localhost:8080/). Make sure your page loads and there are no errors.
+$ npm run start:dev
+
+******************
+** Adding Babel **
+******************
+
+Step 1: Install babel core, babel loader and babel presets
+$ npm i --save-dev @babel/core babel-loader @babel/preset-env
+
+Step 2: In the config file, add the following code:
+...
+rules: [
+    {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader"
+        }
+    },
+    {
+        test: /\.html$/,
+...
+
+*******************
+** Adding Images **
+*******************
+
+Step 1: Create a folder in the src folder to hold all your Images
+mkdir src/img
+
+Step 2: Add your image(s) to the new folder
+
+Step 3: In the index.html file add an image tag to your html
+<img src="img/b.jpg" alt="b">
+
+Step 4: Install file-loader
+$ npm i --save-dev file-loader
+
+Step 5: Add the code to your config file as a new rule
+...
+{
+    test: /\.(png|svg|jpg|gif)$/,
+    use: [
+        'file-loader'
+    ]
+}
+...
+
+Step 6: Run build and make sure your images have been added to your dist file
+$ npm run build
+
+***********************
+** Adding SASS & CSS **
+***********************
+
+Step 1: Install your styling dependencies
+$ npm install sass-loader sass style-loader css-loader --save-dev
+
+Step 2: Import your styling files into your index.js file
+...
+import css from './style.css';
+-or-
+import './style.scss';
+...
+
+Step 3: Add a styling rule to your config file
+...
+{
+    test: /\.s[ac]ss$/i,
+    use: [
+        // Creates `style` nodes from JS strings
+        'style-loader',
+        // Translates CSS into CommonJS
+        'css-loader',
+        // Compiles Sass to CSS
+        'sass-loader',
+    ],
+},
+...
+
+Step 4: Run build and make sure styles are being loaded into your dist folder (via the main.js file, NOT the index.html)
+$ npm run build
+

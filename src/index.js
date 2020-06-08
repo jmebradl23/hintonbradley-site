@@ -23,7 +23,7 @@ function smoothScroll (e) {
 }
 
 function toggleNavbar (e) {
-    if (window.innerWidth<776) {
+    if (window.innerWidth<779) {
         const links = document.querySelector('.nav-links');
         links.classList.toggle('show')
     }

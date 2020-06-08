@@ -451,18 +451,7 @@ input, textarea {
   padding: 0 0 25px;
 }
 
-@media only screen and (min-width: 776px), only screen 
-and (min-device-width: 375px) 
-and (max-device-width: 812px) 
-and (-webkit-min-device-pixel-ratio: 3),
-only screen 
-and (min-device-width: 414px) 
-and (max-device-width: 736px) 
-and (-webkit-min-device-pixel-ratio: 3),
-screen 
-  and (device-width: 360px) 
-  and (device-height: 640px) 
-  and (-webkit-device-pixel-ratio: 4) {
+@media only screen and (min-width: 976px) {
 
   p, li {
     font-size: 20px;

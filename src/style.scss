@@ -429,6 +429,26 @@ input, textarea {
 // end Form
 // end Contact
 
+.media-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 3pt 2pt $color-secondary;
+  background: $color-secondary;
+  transition: 0.5s ease;
+
+}
+
+.media-img:hover {
+  box-shadow: 0 0 3pt 5pt $color-secondary;
+}
+
+.media {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 0 25px;
+}
 
 @media only screen and (min-width: 776px) {
 

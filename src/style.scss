@@ -144,6 +144,7 @@ section {
 .overlay-container {
   position: relative;
   height: 100vh;
+  min-height: 450px;
   overflow: hidden;
 }
 

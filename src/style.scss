@@ -456,19 +456,26 @@ input, textarea {
 }
 
 .test {
-  height: 100vh;
+  height: auto;
 
   .overlay-container {
     position: relative;
+    height: 100vh;
   }
 
-  .text-overlay, img {
+  .text-overlay, .img-container {
     position: absolute;
     top: 0;
     left: 0;
     color: white;
     width: 100%;
     height: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+    opacity: .7;
   }
 
   .text-overlay {
@@ -478,6 +485,16 @@ input, textarea {
     align-content: center;
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 995px) {
 

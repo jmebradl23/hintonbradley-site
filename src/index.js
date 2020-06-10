@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 function smoothScroll (e) {
     e.preventDefault();
-    e.stopPropogation();
+    e.stopPropagation();
     const id = e.currentTarget.getAttribute('href');
     jump(id, {
         duration: 1000,
@@ -25,7 +25,7 @@ function smoothScroll (e) {
 
 function toggleNavbar (e) {
     e.preventDefault();
-    e.stopPropogation();
+    e.stopPropagation();
     alert('hamburber has been clicked!')
     if (window.innerWidth<779) {
         const links = document.querySelector('.nav-links');

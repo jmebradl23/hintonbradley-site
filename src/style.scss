@@ -496,7 +496,8 @@ input, textarea {
 
 
 
-@media only screen and (min-width: 776px), all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)  {
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait), 
+only screen and (min-width: 776px)  {
 
   .fixed {
     background-attachment: fixed;

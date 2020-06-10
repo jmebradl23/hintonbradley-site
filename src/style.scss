@@ -135,7 +135,7 @@ section {
 .fixed {
   background-attachment: fixed;
   background-image: url(./img/code.jpg);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.8;
   min-height: 75vh;

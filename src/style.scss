@@ -78,6 +78,7 @@ nav {
   height: 38px;
 }
 
+
 .nav-links {
   height: 100%;
   list-style: none;
@@ -92,10 +93,10 @@ nav {
   top: -250px;
   transition: 0.5 ease;
 
-  &.show {
-    top: 60px;
-    transition: 0.5 ease;
-  }
+  // &.show {
+  //   top: 60px;
+  //   transition: 0.5 ease;
+  // }
 
   a {
     color: $color-light;
@@ -105,6 +106,10 @@ nav {
     font-size: 20px;
     display: block;
   }
+}
+
+.nav-links.show {
+  top: 60px;
 }
 /* end Navbar */
 

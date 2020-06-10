@@ -26,9 +26,6 @@ function smoothScroll (e) {
 function toggleNavbar (e) {
     e.preventDefault();
     e.stopPropagation();
-    alert('hamburber has been clicked!')
-    // if (window.innerWidth<'49em') {
-        const links = document.querySelector('.nav-links');
-        links.classList.toggle('show')
-    // }
+    const links = document.querySelector('.nav-links');
+    links.classList.toggle('show')
 }

@@ -139,6 +139,10 @@ section {
   background-repeat: no-repeat;
   opacity: 0.8;
   min-height: 75vh;
+  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
 }
 
 .overlay-container {

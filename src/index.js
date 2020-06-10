@@ -15,6 +15,7 @@ $(document).ready(function() {
 
 function smoothScroll (e) {
     e.preventDefault();
+    e.stopPropogation();
     const id = e.currentTarget.getAttribute('href');
     jump(id, {
         duration: 1000,
@@ -23,6 +24,8 @@ function smoothScroll (e) {
 }
 
 function toggleNavbar (e) {
+    e.preventDefault();
+    e.stopPropogation();
     if (window.innerWidth<779) {
         const links = document.querySelector('.nav-links');
         links.classList.toggle('show')

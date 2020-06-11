@@ -16,6 +16,9 @@ $(document).ready(function() {
 function smoothScroll (e) {
     e.preventDefault();
     e.stopPropagation();
+    let links = document.querySelector('.nav-links');
+    console.log(links)
+    if (links.classList.contains('show')){toggleNavbar(e)}
     const id = e.currentTarget.getAttribute('href');
     jump(id, {
         duration: 1000,

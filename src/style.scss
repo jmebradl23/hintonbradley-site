@@ -77,6 +77,7 @@ p {
     margin: 0;
     padding: 11px 25px;
     height: 38px;
+    display: block;
   }
   
   .nav-links {
@@ -833,4 +834,10 @@ input, textarea {
   nav {
     @include navbar-sm();
   }
+
+  .nav-links {
+      a {
+        color: red;
+      }
+    }
 }

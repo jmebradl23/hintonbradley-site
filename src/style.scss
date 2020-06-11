@@ -35,7 +35,6 @@ p {
 }
 
 .about-content hr {
-  margin: 50px;
   width: 350px;
   margin: 50px auto 30px;
 }
@@ -55,62 +54,73 @@ p {
 // end General
 
 // Navbar:
-nav {
-  background: $color-dark;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 900;
-  height: 60px;
-}
+// Mobile and Tablet
+@mixin navbar-sm {
+  &.navbar {
+    background: $color-dark;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    height: 60px;
+  }
 
-.hamburger div {
-  width: 35px;
-  height: 5px;
-  background-color: $color-light;
-  margin: 6px 0;
-}
-
-.hamburger {
-  margin: 0;
-  padding: 11px 25px;
-  height: 38px;
-}
-
-
-.nav-links {
-  height: 100%;
-  list-style: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0;
-  display: block;
-  width: 100%;
-  background: $color-dark;
-  position: absolute;
-  top: -250px;
-  transition: 0.5 ease;
-
-  // &.show {
-  //   top: 60px;
-  //   transition: 0.5 ease;
-  // }
-
-  a {
+  .hamburger div {
+    width: 35px;
+    height: 5px;
+    background-color: $color-light;
+    margin: 6px 0;
+  }
+  
+  .hamburger {
+    margin: 0;
+    padding: 11px 25px;
+    height: 38px;
+  }
+  
+  .nav-links {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    background: $color-dark;
+    position: absolute;
+  }
+  
+  .nav-links {
+    display: block;
+    top: -250px;
+  }
+  
+  .nav-links a {
     color: $color-light;
     text-decoration: none;
     background: $color-dark;
-    padding: 10px 100% 10px 20px;
     font-size: 20px;
-    display: block;
+  }
+  
+  .nav-links.show {
+    top: 60px;
   }
 }
 
-.nav-links.show {
-  top: 60px;
+nav {
+  @include navbar-sm();
 }
+// end Mobile and Tablet
+
+// All Viewports
+.nav-links {
+  a {
+    padding: 10px 100% 10px 20px;
+    display: block;
+  }
+}
+// end All Viewports
 /* end Navbar */
 
 // Sections
@@ -500,7 +510,7 @@ input, textarea {
 
 
 
-@media all and (min-width: 55em) {
+@media all and (min-width: 777px) {
 // @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
 
   .fixed {
@@ -532,16 +542,15 @@ input, textarea {
   // }
 
 // Navbar {
-  .hamburger {
-    display: none;
-  }
 
-  .nav-links {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0;
-    top: 0;
+  nav {
+    .nav-links {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      transition: 0.5 ease;
+      top: 0;
+    }
 
     a {
       display: inline-block;
@@ -553,6 +562,10 @@ input, textarea {
         background: $color-light;
         color: $color-secondary
       }
+    }
+    
+    .hamburger {
+      display: none;
     }
   }
   // end Navbar
@@ -813,4 +826,11 @@ input, textarea {
     }
   }
   // end Contact Form
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  nav {
+    @include navbar-sm();
+  }
 }

@@ -1,0 +1,396 @@
+// GENERAL
+$color-primary: #4fadb3;
+$color-secondary: #ab2c76;
+$color-dark: #191919;
+$color-light: #e8e8e8;
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.sal-animate {
+    z-index: 100;
+}
+
+.card {
+    z-index: 100;
+}
+// end GENERAL
+
+// FULL IMG
+@mixin fullimg-sm {
+    img {
+        width: 100%;
+        height: auto;
+        opacity: 0.8;
+    }
+} 
+
+.full-img {
+    @include fullimg-sm();
+}
+// end FULL IMG
+
+
+
+// NAVBAR
+@mixin navbar-sm {
+    &.navbar {
+      background: $color-dark;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 60px;
+      z-index: 900;
+    }
+  
+    .hamburger div {
+      width: 35px;
+      height: 5px;
+      background-color: $color-light;
+      margin: 6px 0;
+    }
+    
+    .hamburger {
+      margin: 0;
+      padding: 11px 25px;
+      display: block;
+      float: right;
+    }
+    
+    .nav-links {
+        height: auto;
+        list-style: none;
+        width: 100%;
+        position: absolute;
+        height: 0px;
+        overflow: hidden;
+        transition: .5s ease;
+        top: 60px;
+    }
+    
+    a {
+        color: $color-light;
+        text-decoration: none;
+        background: $color-dark;
+        font-size: 20px;
+        padding: 10px 100% 10px 20px;
+        border-radius: 0;
+        display: block;
+    }
+    
+    .nav-links.show {
+        height: 215px;
+    }
+}
+  
+nav {
+    @include navbar-sm();
+}
+/* end NAVBAR */
+
+// CARD
+@mixin card-sm {
+    .card {
+        width: 285px;
+        box-sizing: border-box;
+        margin: 50px auto;
+        text-align: center;
+        background: $color-dark;
+        color: $color-light;
+        box-shadow: 18px 16px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+        .image-container {
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+
+        .card-img {
+            background-repeat: no-repeat;
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-text {
+            padding: 10px;
+        }
+
+        h1, h2, p {
+            margin: 10px 0;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        .card-subtext, .card-description {
+            margin-bottom: 30px;
+        }
+
+        .card-btns {
+            margin-top: 20px;
+        }
+
+        li {
+            padding: 2px 0;
+        }
+    }
+}
+
+.cards-container {
+    @include card-sm();
+}
+// end CARD
+
+// CARD IMAGES
+    .ga-img {
+        background-image: url('./img/ga.jpg');
+        background-position-x: -11px;
+        background-size: cover;
+    }
+
+    .redlands-img {
+        background-image: url('./img/redlands.jpg');
+        background-position-x: -29px;
+        background-size: cover;
+    }
+
+    .emaily-img {
+        background-image: url('./img/emaily.png');
+        background-position: 5px -70px;
+        background-size: cover;
+    }
+
+    .ccps-img {
+        background-image: url('./img/ccps.jpg');
+        background-position: -32px -5px;
+        background-size: cover;
+    }
+
+    .burger-img {
+        background-image: url('./img/burger.jpg');
+        background-position-x: -65px;
+        background-size: cover;
+    }
+
+    .bradley-img {
+        background-image: url('./img/bradley.jpg');
+        background-position-x: -50px;
+        background-size: 120%;
+    }
+
+    .music-img {
+        background-image: url('./img/music.jpg');
+        background-position-x: -29px;
+        background-size: cover;
+    }
+
+    .video-img {
+        background-image: url('./img/video.jpg');
+        background-position-x: -29px;
+        background-size: cover;
+    }
+// end CARD IMAGES
+
+// BUTTON
+@mixin button-sm {
+    .btn {
+        color: $color-light;
+        background: $color-secondary;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        width: 200px;
+        text-decoration: none;
+        margin: 10px auto;
+        border-radius: 50px;
+        font-size: 20px;
+        text-align: center;
+        padding: 0;
+        border: none;
+    }
+}
+
+.card-btns {
+    @include button-sm();
+}
+
+.netlify-form {
+    @include button-sm();
+}
+// end BUTTON
+
+// TECH LOGOS
+@mixin logos-sm {
+    .three {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+.logos {
+    @include logos-sm();
+}
+
+.logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+  
+  .logos img {
+    height: 75px;
+    width: 75px;
+  }
+  
+  .logos img.js {
+    height: 62px;
+    width: 62px;
+    padding-top: 7px;
+  }
+  
+  .logos img.redux {
+    width: 100px;
+  }
+// end TECH LOGOS
+
+// RECOMMENDATIONS
+@mixin recommendation-sm {
+    .right {
+        float: none;
+    }
+
+    .rec-img-container, .rec-test {
+        display: block;
+        width: 100%;
+    }
+}
+
+.recommendation {
+    @include recommendation-sm();
+
+    margin: 50px auto;
+
+    img {
+      border-radius: 80px;
+      margin: 0 auto;
+      box-shadow: 18px 16px 12px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .rec-name {
+        margin: 10px 0 0;
+    }
+
+    .rec-img-container img, .rec-img-container div {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .rec-img-container div {
+        margin: 10px 0 0;
+    }
+
+    .right.sal-animate {
+        width: 100%;
+    }
+
+    .rec-text {
+        padding: 10px 25px 0;
+    }
+}
+  
+//   .rec-img-container.right {
+//     width: 0;
+//   }
+// end RECOMMENDATIONS
+
+
+// Laptop and Desktop
+@media all and (min-width: 777px) {
+    nav {
+        .nav-links {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          transition: 0.5 ease;
+          top: 0;
+          height: 60px;
+        }
+    
+        a {
+          display: inline-block;
+          padding: 10px 20px;
+          border-radius: 50px;
+          transition: 0.5s ease;
+    
+          &:hover {
+            background: $color-light;
+            color: $color-secondary
+          }
+        }
+        
+        .hamburger {
+          display: none;
+        }
+    }
+}
+
+
+
+/* iPads Portrait and Landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    // FULL IMG
+    .full-img {
+        @include fullimg-sm();
+    }
+    // end FULL IMG
+    
+    // NAVBAR
+    nav {
+        @include navbar-sm();
+    }
+    /* end NAVBAR */
+
+    // CARD
+    .cards-container {
+        @include card-sm();
+    }
+    // end CARD
+
+    // BUTTONS
+    .card-btns {
+        @include button-sm();
+    }
+    
+    .netlify-form {
+        @include button-sm();
+    }
+    // end BUTTONS
+
+    // LOGOS
+    .logos {
+        @include logos-sm();
+    }
+    // end LOGOS
+
+    // RECOMMENDATIONS
+    .recommendation {
+        @include recommendation-sm();
+    }
+    // end RECOMMENDATIONS
+}

@@ -17,7 +17,6 @@ function smoothScroll (e) {
     e.preventDefault();
     e.stopPropagation();
     let links = document.querySelector('.nav-links');
-    console.log(links)
     if (links.classList.contains('show')){toggleNavbar(e)}
     const id = e.currentTarget.getAttribute('href');
     jump(id, {
@@ -27,8 +26,10 @@ function smoothScroll (e) {
 }
 
 function toggleNavbar (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const links = document.querySelector('.nav-links');
-    links.classList.toggle('show')
+    if(document.querySelector('.nav-links').clientHeight!=60) {
+        e.preventDefault();
+        e.stopPropagation();
+        const links = document.querySelector('.nav-links');
+        links.classList.toggle('show')
+    }
 }

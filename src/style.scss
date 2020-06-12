@@ -1,844 +1,589 @@
-// General
-$color-primary: #4fadb3;
+// GENERAL
+$color-primary: #cff2f5;
 $color-secondary: #ab2c76;
 $color-dark: #191919;
 $color-light: #e8e8e8;
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: $color-light;
-  min-width: 275px;
-}
-
-h1, h2, h3, ul, li {
-  margin: 0;
-  padding: 0;
-}
-
-p {
-  font-size: 14px;
-}
-
-.txt-ctr {
-  text-align: center;
-}
-
-.right {
-  float: right;
-  order: 2;
-}
-
-.txt-shadow {
-  text-shadow: 3px 3px $color-dark;
-}
-
-.about-content hr {
-  width: 350px;
-  margin: 50px auto 30px;
-}
-
-.btn {
-  display: block;
-  width: 175px;
-  margin: 10px auto;
-  padding: 5px 15px;
-  text-align: center;
-  border: 2px solid $color-secondary;
-  border-radius: 50px;
-  text-decoration: none;
-  color: $color-light;
-  background: $color-secondary;
-}
-// end General
-
-// NAVBAR:
-// Mobile and Tablet
-@mixin navbar-sm {
-  &.navbar {
-    background: $color-dark;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 900;
-    height: 60px;
-  }
-
-  .hamburger div {
-    width: 35px;
-    height: 5px;
-    background-color: $color-light;
-    margin: 6px 0;
-  }
-  
-  .hamburger {
+body, html {
     margin: 0;
-    padding: 11px 25px;
-    height: 38px;
-    display: block;
-  }
-  
-  .nav-links {
-    height: 100%;
-    list-style: none;
     padding: 0;
-    width: 100%;
-    background: $color-dark;
-    position: absolute;
-    display: none;
-    top: -250px;
-  }
-  
-  .nav-links a {
-    color: $color-light;
-    text-decoration: none;
-    background: $color-dark;
-    font-size: 20px;
-  }
-  
-  .nav-links.show {
-    top: 60px;
-    display: block;
-  }
 }
 
-nav {
-  @include navbar-sm();
+h1, h2, h3, ul, li, p {
+    margin: 0;
+    padding: 0;
 }
-// end Mobile and Tablet
 
-// All Viewports
-.nav-links {
-  a {
-    padding: 10px 100% 10px 20px;
-    display: block;
-    border-radius: 0;
-  }
+li {
+    list-style: none;
 }
-// end All Viewports
-/* end NAVBAR */
+// end GENERAL
 
-// Sections
-section {
-  color: $color-dark;
-  background: $color-light;
-  font-size: 20px;
-
-  .section-wrapper {
-    margin: 0 auto;
-    padding: 20px 1vw;
-    max-width: 1440px;
-  }
-
-  h1 {
-    font-size: 42px;
-    padding: 10px 0;
+// CLASSES
+.txt-ctr {
     text-align: center;
-  }
-  
-  p {
-    padding: 0 5vw;
-    line-height: 1.5;
-  }
 }
-
-.fixed {
-  background-attachment: scroll;
-  background-image: url(./img/code.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.8;
-  min-height: 75vh;
-  -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+.section-title {
+    font-size: 32px;
+    padding: 30px 0;
 }
+// end CLASSES
 
-.overlay-container {
-  position: relative;
-  height: 100vh;
-  min-height: 450px;
-  overflow: hidden;
-}
+// TOP 
+.top {
+    margin-top: 60px;
+    min-height: 400px;
 
-.img-overlay, .content-overlay-wrapper {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-}
+    .overlay-container {
+        position: relative;
+        min-height: 600px;
+    }
+    
+    .img-container, .text-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
 
-.content-overlay-wrapper {
-  z-index: 200;
-  color: $color-light;
-  transform: translateY(50%);
-}
+    .text-overlay {
+        height: 100%;
+        transform: translateY(50%);
+    }
 
-.content-overlay {
-  transform: translateY(-50%);
+    .inside-text {
+        transform: translateY(-50%);
+        color: $color-light;
+    }
+
+    &.full-img img {
+        height: 600px;
+    }
 }
 
 .self-img {
-  border-radius: 100px;
-  background-image: url(./img/self.png);
-  background-position: -10px -6px;
-  height: 200px;
-  width: 200px;
-  background-size: 116%;
-  margin: 0 auto;
-}
-
-.scrollable {
-  background: $color-light;
-}
-// End Sections
-
-// About
-.logos {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 20px;
-}
-
-.three {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  margin: 10px 0;
-
-
-}
-
-.logos img {
-  height: 75px;
-  width: 75px;
-}
-
-.logos img.js {
-  height: 62px;
-  width: 62px;
-  padding-top: 7px;
-}
-
-.logos img.redux {
-  width: 100px;
-}
-// end About
-
-// Card
-.card {
-  width: 275px;
-  margin: 40px auto;
-  box-shadow: 18px 16px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
-  h1 {
-    font-size: 24px;
-    padding: 10px 10px 5px;
-  }
-
-  h2 {
-    font-size: 18px;
-    padding: 5px 10px 10px;
-  }
-
-  li {
-    text-align: center;
-    padding: 2px 0;
-  }
-
-  p {
-    margin: 3px 0;
-    padding: 0 25px;
-    line-height: 1.5;
-  }
-
-  p, li {
-    font-size: 16px;
-  }
-}
-
-.image-container {
-  background: $color-dark;
-}
-
-.card-img {
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 175px;
-  width: 100%;
-  text-align: center;
-}
-
-.card-subtext {
-  margin-bottom: 15px;
-}
-
-.card-description {
-  ul {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-.card-text {
-  background: $color-dark;
-  color: $color-light;
-}
-
-.card-btns {
-  margin: 5px auto;
-  padding: 5px 0 15px;
-}
-// end Card
-
-// Education
-.ga-img {
-  background-image: url('./img/ga.jpg');
-}
-
-.redlands-img {
-  background-image: url('./img/redlands.jpg');
-}
-// end Education
-
-// Project
-.emaily-img {
-  background-position: 20px -120px;
-  // background-position: 67px 6px;
-  background-image: url('./img/emaily.png');
-  background-size: 110%;
-}
-
-.ccps-img {
-  background-image: url('./img/ccps.jpg');
-}
-
-.burger-img {
-  background-image: url(./img/burger.jpg);
-  background-position-y: -10px;
-}
-
-.bradley-img {
-  background-image: url(./img/bradley.jpg);
-  background-size: cover;
-}
-// end Project
-
-// Recommendations
-.recommendation {
-  margin: 40px auto;
-
-  .right {
-    float: none;
-  }
-
-  img {
-    border-radius: 80px;
+    background-image: url(./img/self.png);
+    background-size: cover;
+    height: 175px;
+    width: 175px;
     margin: 0 auto;
-    box-shadow: 18px 16px 12px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  }
+    border-radius: 90px;
 }
+// end TOP
 
-.rec-name {
-  margin: 10px 0 0;
-}
 
-.rec-img-container, .rec-test {
-  display: block;
-  width: 100%;
-}
 
-.rec-img-container img, .rec-img-container div {
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-}
-
-.rec-img-container div {
-  margin: 10px 0 0;
-}
-
-.rec-img-container.right {
-  width: 0;
-}
-
-.rec-img-container.right.sal-animate {
-  width: 100%;
-}
-
-.rec-text {
-  padding: 0 25px;
-}
-// end Recommendations
-
-// Publications
-.publication {
-  h1 {
-    text-decoration: underline;
-  }
-
-  h1, h2 {
-    font-size: 16px;
-    padding: 10px 0 5px;
-  }
-
-  p {
-    text-align: justify;
-    line-height: 1.3;
-  }
-}
-
-.video-img {
-  background-image: url(./img/video.jpg);
-}
-
-.music-img {
-  background-image: url(./img/music.jpg);
-}
-// end Publications
-
-// Contact
-.contact {
-  background: $color-dark;
-  color: $color-light;
-
-  p.txt-ctr {
-    margin: 5px 0;
-  }
-}
-// Form
-form {
-  max-width: 450px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  margin-bottom: 25px;
-  width: 90%;
-
-  .full-width {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-input {
-  width: 200px;
-  height: 40px;
-}
-
-textarea {
-  width: 100%;
-}
-
-input, textarea {
-  margin-top: 25px;
-  font-size: 20px;
-  font-family: sans-serif;
-}
-// end Form
-// end Contact
-
-.media-img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  box-shadow: 0 0 3pt 2pt $color-secondary;
-  background: $color-secondary;
-  transition: 0.5s ease;
-
-}
-
-.media-img:hover {
-  box-shadow: 0 0 3pt 5pt $color-secondary;
-}
-
-.media {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 0 25px;
-}
+// FULL IMG
+@mixin fullimg-sm {
+    img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+} 
 
 .full-img {
-  .overlay-container {
-    position: relative;
-  }
-
-  .overlay-container {
-    height: 100vh;
-  }
-
-  .text-overlay, .img-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: white;
-    width: 100%;
-    height: 100%;
-  }
-
-  img {
-    height: 100%;
-    width: auto;
-    opacity: .7;
-  }
-
-  .text-overlay {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-  }
+    @include fullimg-sm();
 }
-
-
-.separation {
-  .overlay-container {
-    height: auto;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-}
+// end FULL IMG
 
 
 
-
-
-
-@media all and (min-width: 777px) {
-
-  .fixed {
-    background-attachment: fixed;
-  }
-
-  p, li {
-    font-size: 20px;
-  }
-
-  .btn {
-    background: $color-dark;
-    border: 3px solid $color-secondary;
-    transition: 0.5s ease;
-  }
-
-  .btn:hover {
-    background: $color-secondary;
-  }
-
-  .three {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-  }
-
-// Navbar {
-  nav {
-    .nav-links {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      transition: 0.5 ease;
+// NAVBAR
+@mixin navbar-sm {
+    &.navbar {
+      background: $color-dark;
+      position: fixed;
+      width: 100%;
       top: 0;
+      left: 0;
+      height: 60px;
+      z-index: 900;
     }
-
-    a {
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 50px;
-      transition: 0.5s ease;
-
-      &:hover {
-        background: $color-light;
-        color: $color-secondary
-      }
+  
+    .hamburger div {
+      width: 35px;
+      height: 5px;
+      background-color: $color-light;
+      margin: 6px 0;
     }
     
     .hamburger {
-      display: none;
-    }
-  }
-  // end Navbar
-
-  // Cards
-  .cards-container {
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .card {
-    width: 375px;
-    height: 355px;
-    position: relative;
-    overflow: hidden;
-
-    h1, h2, p {
       margin: 0;
-      padding: 0;
+      padding: 11px 25px;
+      display: block;
+      float: right;
     }
-  }
-
-  .card-text {
-    height: 350px;
-  }
-
-  .card-img {
-    min-height: 355px;
-  }
-
-  .card-description, .card-btns {
-    opacity: 0;
-    transition: 0.5s ease;
-  }
-
-  .card-description {
-    padding: 0 20px;
-  }
-
-  .card-btns {
-    margin: 0 auto;
-    padding: 0;
-    height: 50px;
-  }
-
-  .card-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 0;
-    box-sizing: border-box;
-
-    h1 {
-      line-height: 1.2;
+    
+    .nav-links {
+        height: auto;
+        list-style: none;
+        width: 100%;
+        position: absolute;
+        height: 0px;
+        overflow: hidden;
+        transition: .5s ease;
+        top: 60px;
+        display: block;
     }
-
-    h2 {
-      line-height: 1.5;
+    
+    a {
+        color: $color-light;
+        text-decoration: none;
+        background: $color-dark;
+        font-size: 20px;
+        padding: 10px 100% 10px 20px;
+        border-radius: 0;
+        display: block;
     }
-
-    ul.thirds li {
-      width: 30%;
+    
+    .nav-links.show {
+        height: 215px;
     }
+}
+  
+nav {
+    @include navbar-sm();
+}
+/* end NAVBAR */
 
-    li {
-      width: 49%;
-      display: inline-block;
-      text-align: center;
-      margin: 4px 0;
+// CARD
+@mixin card-sm {
+
+    .card {
+        width: 285px;
+        height: auto;
+        box-sizing: border-box;
+        margin: 50px auto;
+        text-align: center;
+        background: $color-dark;
+        color: $color-light;
+        box-shadow: 18px 16px 12px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
-    li.full-width {
-      width: 100%;
-    }
-
-    p {
-      margin: 0;
-      line-height: 1.8;
-    }
-  }
-
-  .image-container, .card-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .education {
-    .redlands-img {
-      background-size: 115%;
-      background-position-x: -25px;
-    }
-
-    .top-titles {
-      height: 90px;
-    }
-
-    .card-text {
-      top: 240px;
-      transition: 0.5s ease;
-    }
-
-    h1 {
-      font-size: 28px;
-    }
-
-    h2 {
-      font-size: 18px;
-    }
-
-    p {
-      padding: 0 25px;
-    }
-
-    .card-btns {
-      a {
-        margin: 5px auto;
-      }
-    }
-  }
-
-  .project {
-
-    &.card {
-      height: 400px;
-    }
-
-    .card-text {
-      height: 400px;
-    }
-
-    .top-titles {
-      height: 130px;
-    }
-
-    .card-text {
-      top: 225px;
-      transition: 0.5s ease;
-    }
-
-    h1 {
-      font-size: 24px;
-    }
-
-    h2 {
-      font-size: 12px;
-    }
-
-    li {
-      line-height: 1.2;
-    }
-
-    .card-btns {
-      height: 110px;
-
-      a {
-        margin: 10px auto;
-        width: 200px;
-      }
+    .image-container {
+        background-repeat: no-repeat;
+        width: 100%;
     }
 
     .card-img {
-      background-size: 115%;
-      background-position-x: -50px;
-      background-position-y: -10px;
+        background-repeat: no-repeat;
+        height: 200px;
+        width: 100%;
     }
-
-    .emaily-img {
-      background-size: 100%;
-      background-position: 12px -131px;
-      // background-size: 110%;
-    }
-    
-    .ccps-img {
-      background-size: 150%;
-      background-position: -95px -50px;
-    }
-    
-    .burger-img {
-      background-position-y: -10px;
-    }
-    
-    .bradley-img {
-      background-position-y: -25px;
-    }
-  }
-
-  .publication {
 
     .card-text {
-      top: 250px;
-      transition: 0.5s ease;
+        padding: 10px;
     }
 
-    .top-titles {
-      height: 75px;
-    }
-
-    h1 {
-      font-size: 22px;
-      padding: 10px;
+    h1, h2, p {
+        margin: 10px 0;
     }
 
     h2 {
-      font-size: 18px;
+        font-size: 18px;
     }
 
-    p {
-      line-height: 1.5;
+    .card-subtext, .card-description {
+        margin-bottom: 30px;
     }
 
     .card-btns {
-      height: 50px;
+        margin-top: 20px;
+    }
+
+    li {
+        padding: 2px 0;
+    }
+}
+
+.cards-container {
+    display: block;
+    
+    @include card-sm();
+}
+// end CARD
+
+// CARD IMAGES
+    .ga-img {
+        background-image: url('./img/ga.jpg');
+        background-position-x: -11px;
+        background-size: cover;
+    }
+
+    .redlands-img {
+        background-image: url('./img/redlands.jpg');
+        background-position-x: -29px;
+        background-size: cover;
+    }
+
+    .emaily-img {
+        background-image: url('./img/emaily.png');
+        background-position: 5px -70px;
+        background-size: cover;
+    }
+
+    .ccps-img {
+        background-image: url('./img/ccps.jpg');
+        background-position: -32px -5px;
+        background-size: cover;
+    }
+
+    .burger-img {
+        background-image: url('./img/burger.jpg');
+        background-position-x: -65px;
+        background-size: cover;
+    }
+
+    .bradley-img {
+        background-image: url('./img/bradley.jpg');
+        background-position-x: -50px;
+        background-size: 120%;
+    }
+
+    .music-img {
+        background-image: url('./img/music.jpg');
+        background-position-x: -29px;
+        background-size: cover;
+    }
+
+    .video-img {
+        background-image: url('./img/video.jpg');
+        background-position-x: -29px;
+        background-size: cover;
+    }
+// end CARD IMAGES
+
+// BUTTON
+@mixin button-sm {
+    .btn {
+        color: $color-light;
+        background: $color-secondary;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        width: 200px;
+        text-decoration: none;
+        margin: 10px auto;
+        border-radius: 50px;
+        font-size: 20px;
+        text-align: center;
+        padding: 0;
+        border: none;
+    }
+}
+
+.card-btns {
+    @include button-sm();
+}
+
+.netlify-form {
+    @include button-sm();
+}
+// end BUTTON
+
+// TECH LOGOS
+@mixin logos-sm {
+    .three {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+.logos {
+    @include logos-sm();
+}
+
+.logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+  
+  .logos img {
+    height: 75px;
+    width: 75px;
+  }
+  
+  .logos img.js {
+    height: 62px;
+    width: 62px;
+    padding-top: 7px;
+  }
+  
+  .logos img.redux {
+    width: 100px;
+  }
+// end TECH LOGOS
+
+// RECOMMENDATIONS
+@mixin recommendation-sm {
+    .right {
+        float: none;
+    }
+
+    .rec-img-container, .rec-test {
+        display: block;
+    }
+}
+
+.recommendation {
+    @include recommendation-sm();
+
+    margin: 50px auto;
+
+    img {
+      border-radius: 80px;
+      margin: 0 auto;
+      box-shadow: 18px 16px 12px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .rec-name {
+        margin: 10px 0 0;
+    }
+
+    .rec-img-container img, .rec-img-container div {
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    .rec-img-container div {
+        margin: 10px 0 0;
+    }
+
+    .right.sal-animate {
+        width: 100%;
+    }
+
+    .rec-text {
+        padding: 10px 25px 0;
+    }
+
+    .right {
+        width: 0;
+    }
+
+    .right.sal-animate {
+    width: 100%;
+    }
+}
+// end RECOMMENDATIONS
+
+// CONTACT
+.contact {
+    background-color: #080A00;
+    color: $color-light;
+}
+
+.media {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    padding: 50px 0;
+
+    img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        box-shadow: 0 0 3pt 2pt $color-secondary;
+        background: $color-secondary;
+        transition: 0.5s ease;
+    }
+
+    img:hover {
+        box-shadow: 0 0 3pt 5pt $color-secondary;
+    }
+}
+// end CONTACT
+
+// FORM
+// only temporary - need to refactor:
+form {
+    max-width: 450px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    width: 90%;
+  
+    .full-width {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
   }
+  
+  input {
+    width: 200px;
+    height: 40px;
+  }
+  
+  textarea {
+    width: 100%;
+  }
+  
+  input, textarea {
+    margin-top: 25px;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+// end FORM
+
+
+
+
+
+
+
+
+// Laptop and Desktop
+@media all and (min-width: 777px) {
+    // CLASSES 
+    .section-title {
+        font-size: 48px;
+    }
+    // end CLASSES
+
+    // NAVBAR
+    nav {
+        .nav-links {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          transition: 0.5 ease;
+          top: 0;
+          height: 60px;
+        }
+    
+        a {
+          display: inline-block;
+          padding: 10px 20px;
+          border-radius: 50px;
+          transition: 0.5s ease;
+    
+          &:hover {
+            background: $color-light;
+            color: $color-secondary
+          }
+        }
+        
+        .hamburger {
+          display: none;
+        }
+    }
+    // end NAVBAR
+
+    // CARD
+    .cards-container {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 1000px;
+        margin: 0 auto;
+    
+        .card {
+            width: 375px;
+            height: 375px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img {
+            height: 250px;
+        }
+
+        .image-container, .card-text {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100%;
+            top: 0px;
+            height: 375px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-text {
+            top: 250px;
+            background-color: $color-dark;
+            transition: 0.5s ease;
+        }
+
+        .card-description, .card-subtext {
+            margin: 0;
+        }
+
+        .card-description, .card-btns {
+            opacity: 0;
+            transition: 0.5s ease;
+        }
+
+        li {
+            width: 49%;
+            display: inline-block;
+        }
+
+        // h1, h2, p {
+        //     margin: 5px 0;
+        // }
+    }
 
     .card:hover .card-text {
-    top: 0;
-  }
-
-  .card:hover .card-description, .card:hover .card-btns {
-    opacity: 1;
-  }
-  // end Cards
-
-  // recommendations
-  .recommendation {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 35px 0;
-  }
-
-  .rec-text {
-    flex-basis: 60%;
-    font-size: 20px;
-  }
-
-  .rec-img-container {
-    flex-basis: 20%;
-    text-align: center;
-  }
-// end Recommendations
-}
-
-@media only screen and (max-width: 500px) {
-  // Contact Form
-  form {
-    .full-width {
-      display: block;
+        top: 0;
     }
 
-    input {
-      width: 100%;
+    .card:hover .card-description, .card:hover .card-btns {
+        opacity: 1;
     }
-  }
-  // end Contact Form
+    // end CARD
 }
 
 
-/* Portrait and Landscape */
+
+/* iPads Portrait and Landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-  nav {
-    @include navbar-sm();
-  }
-
-  .nav-links {
-      a {
-        color: red;
-     
-      }
+    // FULL IMG
+    .full-img {
+        @include fullimg-sm();
     }
+    // end FULL IMG
+    
+    // NAVBAR
+    nav {
+        @include navbar-sm();
+    }
+    /* end NAVBAR */
+
+    // CARD
+    .cards-container {
+        display: block;
+
+        @include card-sm();
+    }
+    // end CARD
+
+    // BUTTONS
+    .card-btns {
+        @include button-sm();
+    }
+    
+    .netlify-form {
+        @include button-sm();
+    }
+    // end BUTTONS
+
+    // LOGOS
+    .logos {
+        @include logos-sm();
+    }
+    // end LOGOS
+
+    // RECOMMENDATIONS
+    .recommendation {
+        @include recommendation-sm();
+    }
+    // end RECOMMENDATIONS
 }

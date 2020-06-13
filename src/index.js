@@ -11,7 +11,19 @@ $(document).ready(function() {
     hamburger.addEventListener('click', toggleNavbar);
     const navLinks = document.querySelector('.nav-links');
     navLinks.addEventListener('click', toggleNavbar);
+    const body = document.getElementsByTagName('body')[0];
+    body.addEventListener('click', checkForSmallNav);
 });
+
+function checkForSmallNav(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    const links = document.querySelector('.nav-links');
+    if(links.classList.contains('show')){
+        links.classList.remove('show');
+    }
+    return false;
+}
 
 function smoothScroll (e) {
     e.preventDefault();
@@ -22,7 +34,8 @@ function smoothScroll (e) {
     jump(id, {
         duration: 1000,
         offset: -58
-      })
+    })
+    return false;
 }
 
 function toggleNavbar (e) {
@@ -32,4 +45,5 @@ function toggleNavbar (e) {
         const links = document.querySelector('.nav-links');
         links.classList.toggle('show')
     }
+    return false;
 }

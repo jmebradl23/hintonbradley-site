@@ -33,6 +33,9 @@ li {
 .txt-wrapper {
     padding: 5px 5vw;
 }
+.title-ul {
+    text-decoration: underline;
+}
 // end CLASSES
 
 // TOP 
@@ -151,7 +154,6 @@ nav {
 
 // CARD
 @mixin card-sm {
-
     .card {
         width: 285px;
         height: auto;
@@ -170,7 +172,6 @@ nav {
 
     .image-container, .card-text {
         position: static;
-        height: auto;
     }
 
     .card-img {
@@ -191,16 +192,20 @@ nav {
         font-size: 18px;
     }
 
-    .card-subtext, .card-description {
-        margin-bottom: 30px;
-    }
-
-    .card-btns {
-        margin-top: 20px;
-    }
-
     li {
         padding: 2px 0;
+    }
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 380px;
+
+    li.half {
+        display: inline-block;
+        width: 49%;
     }
 }
 
@@ -262,6 +267,9 @@ nav {
 // end CARD IMAGES
 
 // BUTTON
+.btn {
+    margin: 10px auto;
+}
 @mixin button-sm {
     .btn {
         color: $color-light;
@@ -271,7 +279,6 @@ nav {
         line-height: 40px;
         width: 200px;
         text-decoration: none;
-        margin: 10px auto;
         border-radius: 50px;
         font-size: 20px;
         text-align: center;
@@ -533,6 +540,10 @@ form {
         li {
             width: 49%;
             display: inline-block;
+        }
+
+        li.full-width {
+            width: 100%;
         }
 
         .card-btns {

@@ -16,10 +16,10 @@ $(document).ready(function() {
 });
 
 function checkForSmallNav(e) {
-    e.stopPropagation();
-    e.preventDefault();
     const links = document.querySelector('.nav-links');
     if(links.classList.contains('show')){
+        e.stopPropagation();
+        e.preventDefault();
         links.classList.remove('show');
     }
     return false;

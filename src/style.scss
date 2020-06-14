@@ -273,6 +273,7 @@ nav {
 }
 @mixin button-sm {
     .btn {
+        -webkit-appearance: none;
         color: $color-light;
         background: $color-secondary;
         display: block;

@@ -32,6 +32,8 @@ li {
 }
 .txt-wrapper {
     padding: 5px 5vw;
+    font-size: 16px;
+    line-height: 1.5;
 }
 .title-ul {
     text-decoration: underline;
@@ -377,10 +379,6 @@ nav {
         width: 100%;
     }
 
-    .rec-text {
-        padding: 10px 25px 0;
-    }
-
     .right {
         width: 0;
     }
@@ -451,20 +449,17 @@ form {
   }
 // end FORM
 
-
-
-
-
-
-
-
 // Laptop and Desktop
 @media all and (min-width: 777px) {
-    // CLASSES 
-    .section-title {
-        font-size: 48px;
-    }
-    // end CLASSES
+  // CLASSES 
+  .section-title {
+      font-size: 48px;
+  }
+
+  .txt-wrapper {
+    font-size: 24px;
+  }
+  // end CLASSES
 
     // NAVBAR
     nav {
@@ -550,6 +545,10 @@ form {
             width: 100%;
         }
 
+        li, p {
+          font-size: 18px;
+        }
+
         .card-btns {
             margin: 0;
         }
@@ -573,7 +572,7 @@ form {
         }
 
         .emaily-img {
-            background-position: 30px -80px;
+            background-position: 30px -72px;
             background-size: 80%;
         }
 

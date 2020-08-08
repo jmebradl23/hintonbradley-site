@@ -215,6 +215,11 @@ nav {
         display: inline-block;
         width: 49%;
     }
+
+    li.third {
+        width: 49%;
+        display: inline-block;
+    }
 }
 
 .cards-container {
@@ -529,6 +534,10 @@ form {
             top: 250px;
             background-color: $color-dark;
             transition: 0.5s ease;
+
+            li.third {
+                width: 32%;
+            }
         }
 
         .card-description, .card-subtext {
